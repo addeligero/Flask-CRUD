@@ -14,7 +14,9 @@ def add(num1, num2):
 
 @app.route('/welcome')
 def hello():
-    return render_template('index.html')
+    name='Adrian'
+    list = {1,2,3,4,5}
+    return render_template('index.html', name=name, list=list)
 
 
 @app.route('/handle_params')

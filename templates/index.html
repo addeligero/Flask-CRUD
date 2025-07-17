@@ -34,7 +34,11 @@
   </head>
   <body>
     <div class="welcome-container">
-      <h1>Welcome!</h1>
+      <h1>Welcome, {{name}}!</h1>
+      <ul>
+        {% for item in list %}
+          <li>{{ item }}</li>
+        {% endfor %}
       <p>
         This is your new Django + React project. Start building something
         amazing!

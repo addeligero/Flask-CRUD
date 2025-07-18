@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{%block title%}Base Template{%endblock%}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+</html>
+<header
+  style="background: #2c3e50; color: #fff; padding: 1rem 0; text-align: center"
+>
+  <h1 style="margin: 0; font-size: 2.5rem">Welcome to My Django Site</h1>
+  <nav style="margin-top: 0.5rem">
+    <a href="/" style="color: #ecf0f1; margin: 0 1rem; text-decoration: none"
+      >Home</a
+    >
+    <a
+      href="/about/"
+      style="color: #ecf0f1; margin: 0 1rem; text-decoration: none"
+      >About</a
+    >
+    <a
+      href="/contact/"
+      style="color: #ecf0f1; margin: 0 1rem; text-decoration: none"
+      >Contact</a
+    >
+  </nav>
+</header>
+<body>
+  {% block content %} {% endblock %}
+</body>

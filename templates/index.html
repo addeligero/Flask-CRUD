@@ -1,48 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Welcome</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<div
+  class="welcome-container"
+  style="
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    padding: 32px;
+  "
+>
+  <h1
+    style="
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 16px;
+    "
+  >
+    Welcome, {{ name }}!
+  </h1>
+  <ul style="list-style: none; padding: 0; margin-bottom: 24px">
+    {% for item in list %}
+    <li
+      style="
         background: #f5f6fa;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        height: 100vh;
-        align-items: center;
-        justify-content: center;
-      }
-      .welcome-container {
-        background: #fff;
-        padding: 40px 60px;
-        border-radius: 12px;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-        text-align: center;
-      }
-      h1 {
-        color: #2d3436;
-        margin-bottom: 16px;
-      }
-      p {
-        color: #636e72;
-        font-size: 1.1em;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="welcome-container">
-      <h1>Welcome, {{name}}!</h1>
-      <ul>
-        {% for item in list %}
-          <li>{{ item }}</li>
-        {% endfor %}
-      <p>
-        This is your new Django + React project. Start building something
-        amazing!
-      </p>
-    </div>
-  </body>
-</html>
+        margin-bottom: 8px;
+        padding: 12px 18px;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        color: #34495e;
+      "
+    >
+      {{ item }}
+    </li>
+    {% endfor %}
+  </ul>
+  <p style="font-size: 1.15rem; color: #636e72; margin-top: 12px">
+    This is your new
+    <span style="color: #0984e3; font-weight: 600">Django + React</span>
+    project. Start building something amazing!
+  </p>
+</div>
+{% endblock %}

@@ -1,46 +1,109 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
-%}
+{% extends "base.html" %} {% block title %}Register{% endblock %} {% block
+content %}
 <div
-  class="welcome-container"
+  class="container"
   style="
-    max-width: 600px;
-    margin: 40px auto;
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-    padding: 32px;
+    max-width: 420px;
+    margin: 48px auto;
+    background: #f8f9fa;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(44, 62, 80, 0.12);
+    padding: 38px 32px;
   "
 >
-  <h1
+  <h2
     style="
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
-      color: #2c3e50;
-      margin-bottom: 16px;
+      color: #1a1a2e;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+      text-align: center;
     "
   >
-    Welcome, {{ name }}!
-  </h1>
-  <ul style="list-style: none; padding: 0; margin-bottom: 24px">
-    {% for item in list %}
-    <li
+    Create Your Account
+  </h2>
+  <form method="post" style="margin-top: 12px">
+    <div style="margin-bottom: 18px">
+      <label for="username" style="font-weight: 500; color: #22223b"
+        >Username</label
+      >
+      <input
+        type="text"
+        id="username"
+        name="username"
+        required
+        style="
+          width: 100%;
+          padding: 12px;
+          border-radius: 8px;
+          border: 1px solid #dbeafe;
+          margin-top: 6px;
+          font-size: 1rem;
+          background: #fff;
+        "
+      />
+    </div>
+    <div style="margin-bottom: 18px">
+      <label for="email" style="font-weight: 500; color: #22223b">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        style="
+          width: 100%;
+          padding: 12px;
+          border-radius: 8px;
+          border: 1px solid #dbeafe;
+          margin-top: 6px;
+          font-size: 1rem;
+          background: #fff;
+        "
+      />
+    </div>
+    <div style="margin-bottom: 18px">
+      <label for="password" style="font-weight: 500; color: #22223b"
+        >Password</label
+      >
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        style="
+          width: 100%;
+          padding: 12px;
+          border-radius: 8px;
+          border: 1px solid #dbeafe;
+          margin-top: 6px;
+          font-size: 1rem;
+          background: #fff;
+        "
+      />
+    </div>
+    <button
+      type="submit"
       style="
-        background: #f5f6fa;
-        margin-bottom: 8px;
-        padding: 12px 18px;
-        border-radius: 8px;
+        width: 100%;
+        padding: 13px 0;
+        background: linear-gradient(90deg, #3a86ff 0%, #4361ee 100%);
+        color: #fff;
         font-size: 1.1rem;
-        color: #34495e;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+        cursor: pointer;
+        transition: background 0.2s;
       "
     >
-      {{ item }}
-    </li>
-    {% endfor %}
-  </ul>
-  <p style="font-size: 1.15rem; color: #636e72; margin-top: 12px">
-    This is your new
-    <span style="color: #0984e3; font-weight: 600">Django + React</span>
-    project. Start building something amazing!
-  </p>
+      Register
+    </button>
+    <p style="text-align: center; margin-top: 18px; color: #3d3d5c">
+      Already have an account?
+      <a href="" style="color: #3a86ff; font-weight: 600">Login</a>
+    </p>
+  </form>
 </div>
 {% endblock %}

@@ -1,23 +1,21 @@
 from flask import Flask,request, render_template, request
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__, template_folder='templates', static_folder='static', static_url_path='/')
 
-@app.route('/')
+@app.route('/', methods=['GET' ,'POST'])
 def index():
-    return "<h1>Hello, World!</h1>"
+     if request.method == 'GET':
+        return render_template('index.html')
+     else:  # Handles POST
+        username = request.form.get('username')
+        password = request.form.get('password')
+        return f"Welcome {username}, your password is: {password}"
+
 
 @app.route('/add/<int:num1>/<int:num2>')
 def add(num1, num2):
     
     return f'{num1} + {num2} = {num1 + num2}'
-
-# This route handles the form submission
-@app.route('/welcome', methods=['GET' ,'POST'])
-def hello():
-    if request.method == 'GET':
-        name='Adrian'
-        list = {1,2,3,4,5}
-    return render_template('index.html', name=name, list=list)
 
 
 # This route handle parameters from the query string

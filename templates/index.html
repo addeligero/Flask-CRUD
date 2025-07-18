@@ -11,6 +11,7 @@ content %}
     padding: 38px 32px;
   "
 >
+<div style="display:flex; justify-content:center; align-items:center;">
   <h2
     style="
       font-size: 2rem;
@@ -19,11 +20,14 @@ content %}
       margin-bottom: 18px;
       letter-spacing: 1px;
       text-align: center;
+      margin-right: 12px;
     "
   >
     Create Your Account
   </h2>
-  <form method="post" style="margin-top: 12px">
+  <img style="max-width:50px;" src="/img/login.png" alt="Login">
+</div>
+  <form method="post" style="margin-top: 12px" action {{url_for('index')}}>
     <div style="margin-bottom: 18px">
       <label for="username" style="font-weight: 500; color: #22223b"
         >Username</label

@@ -1,6 +1,7 @@
-from flask import Flask,request, render_template, request
+from flask import Flask,request, render_template, request,session
 
 app = Flask(__name__, template_folder='templates', static_folder='static', static_url_path='/')
+app.secret_key='SOME KEY'
 
 @app.route('/', methods=['GET' ,'POST'])
 def index():
@@ -11,11 +12,18 @@ def index():
         password = request.form.get('password')
         return f"Welcome {username}, your password is: {password}"
 
+@app.route('/setting_session')
+def setting_session():
+    session['name']='Adrian'
+    session['age'] = 30  
+    return render_template('setting_session.html')
 
-@app.route('/add/<int:num1>/<int:num2>')
-def add(num1, num2):
-    
-    return f'{num1} + {num2} = {num1 + num2}'
+@app.route('/set')
+def set():
+    name=session['name']
+    age=session['age']   
+    message = f"Session set with name: {name} and age: {age}"
+    return render_template('setting_session.html', message=message)
 
 
 # This route handle parameters from the query string
